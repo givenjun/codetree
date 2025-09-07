@@ -19,6 +19,7 @@ public class Main {
                 cnt = i;
                 break;
             }
+            cnt = str.length;
             sum += n;
         }
 
