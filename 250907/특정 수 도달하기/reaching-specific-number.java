@@ -23,8 +23,9 @@ public class Main {
         }
 
         avg = sum * 1.0 / cnt;
+        String s = String.format("%.1f", avg);
 
-        bw.write(sum + " " + avg);
+        bw.write(sum + " " + s);
         bw.flush();
         bw.close();
 
