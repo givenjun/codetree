@@ -13,8 +13,10 @@ public class Main {
         double avg = 0;
 
         for (int i = 0; i < str.length; i++) {
-            if ((i + 1) % 2 == 0) sum[0] += Integer.parseInt(str[i]);
-            else if ((i + 1) % 3 == 0) { 
+            if ((i + 1) % 2 == 0) {
+                sum[0] += Integer.parseInt(str[i]);
+            }
+            if ((i + 1) % 3 == 0) { 
                 sum[1] += Integer.parseInt(str[i]);
                 cnt++;
             }
