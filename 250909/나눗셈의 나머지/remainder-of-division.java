@@ -13,13 +13,14 @@ public class Main {
         int total = 0;
 
         while (true) {
+            if (A <= 1) break;
+
             int S = A / B;
             int R = A % B;
             arr[R]++;
             A = S;
-
-            if (S == 0) break;
         }
+
         for (int i = 0; i < B; i++) {
             total += arr[i] * arr[i];
         }
