@@ -14,7 +14,7 @@ public class Main {
         String[] str2 = br.readLine().split(" ");
         String ans = "No";
 
-        for (int i = 0; i < N1 - N2; i++) {
+        for (int i = 0; i <= N1 - N2; i++) {
             int cnt = 0;
             for (int j = 0; j < N2; j++) {
                 if (str1[j + i].equals(str2[j])) cnt++;
