@@ -10,13 +10,16 @@ public class Main {
         int N1 = Integer.parseInt(N[0]);
         int N2 = Integer.parseInt(N[1]);
 
-        String str1 = br.readLine().replace(" ", "");
-        String str2 = br.readLine().replace(" ", "");
+        String[] str1 = br.readLine().split(" ");
+        String[] str2 = br.readLine().split(" ");
         String ans = "No";
 
-        for (int i = 0; i <= N1 - N2; i++) {
-            String str = str1.substring(i, i + N2);
-            if (str.equals(str2)) { ans = "Yes"; break; }
+        for (int i = 0; i < N1 - N2; i++) {
+            int cnt = 0;
+            for (int j = 0; j < N2; j++) {
+                if (str1[j + i].equals(str2[j])) cnt++;
+            }
+            if (cnt == N2) { ans = "Yes"; break; }
         }
         bw.write(ans);
         bw.flush();
