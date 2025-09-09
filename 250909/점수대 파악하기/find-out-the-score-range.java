@@ -13,6 +13,7 @@ public class Main {
             int num = Integer.parseInt(s);
             int grade = num / 10;
 
+            if (num == 0) break;
             if (grade == 0) continue;
             arr[grade - 1]++;
         }
