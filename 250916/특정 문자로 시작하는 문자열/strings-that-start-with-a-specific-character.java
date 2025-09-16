@@ -23,7 +23,7 @@ public class Main {
                 sum += str[i].length();
             }
         }
-        avg = sum / cnt;
+        avg = sum * 1.0 / cnt;
         String s_avg = String.format("%.2f", avg);
 
         bw.write(cnt + " " + s_avg);
