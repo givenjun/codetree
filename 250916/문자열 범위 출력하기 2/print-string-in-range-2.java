@@ -6,16 +6,13 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        String str = br.readLine();
-        String[] spl = str.split("");
+        String[] str = br.readLine().split("");
         String res = "";
         int N = Integer.parseInt(br.readLine());
-        int len = str.length();
-        if (N > len) res = str;
-        else {
-            for (int i = len - 1; i >= len - N; i--) {
-                res += spl[i];
-            }
+        int len = str.length;
+        for (int i = len - 1; i >= len - N; i--) {
+            if (i == -1) break;
+            res += str[i];
         }
         bw.write(res);
         bw.flush();
