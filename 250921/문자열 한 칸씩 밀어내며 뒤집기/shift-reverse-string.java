@@ -15,17 +15,17 @@ public class Main {
             String com = br.readLine();
 
             if (com.equals("1")) {
-                S = S.substring(1, len) + S.charAt(0);
+                S = S.substring(1, len) + S.substring(0, 1);
             }
             else if (com.equals("2")) {
-                S = S.substring(len - 1, len) + S.charAt(len - 1);
+                S = S.substring(len - 1, len) + S.substring(0, len - 1);
             }
             else if (com.equals("3")) {
-                String rev = "";
+                StringBuilder sb = new StringBuilder("");
                 for (int j = len - 1; j >= 0; j--) {
-                    rev += S.charAt(j);
+                    sb.append(S.charAt(j));
                 }
-                S = rev;
+                S = sb.toString();
             }
             bw.write(S + "\n");
         }
