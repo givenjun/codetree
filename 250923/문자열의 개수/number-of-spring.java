@@ -16,13 +16,11 @@ public class Main {
             
             if (cnt % 2 == 0) continue;
 
-            s += (str + " ");
+            s += (str + "\n");
         }
         String[] list = s.split(" ");
         bw.write(cnt + "\n");
-        for (String l : list) {
-            bw.write(l + "\n");
-        }
+        bw.write(s);
         bw.flush();
         bw.close();
     }
