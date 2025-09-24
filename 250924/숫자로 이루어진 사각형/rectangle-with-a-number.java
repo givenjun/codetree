@@ -11,7 +11,7 @@ public class Main {
         int val = 1;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++){
-                if (val == 9) val = 1;
+                if (val == 10) val = 1;
                 System.out.print(val + " ");
                 val++;
             }
