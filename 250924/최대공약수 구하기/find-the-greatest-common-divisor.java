@@ -10,7 +10,7 @@ public class Main {
     }
     public static int max_div(int n, int m) {
         int div = 0;
-        for (int i = m; i > 2; i--) {
+        for (int i = m; i >= 1; i--) {
             if (n % i == 0 && m % i == 0) {
                 div = i;
                 break;
