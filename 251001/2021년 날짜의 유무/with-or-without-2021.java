@@ -17,9 +17,10 @@ public class Main {
             if ((d >= 1 && d <= 31)) System.out.println("Yes");
             else System.out.println("No");
         }
-        else {
+        else if ("4 6 9 11".contains(month)) {
             if ((d >= 1 && d <= 30)) System.out.println("Yes");
             else System.out.println("No");
         }
+        else System.out.println("No");
     }
 }
