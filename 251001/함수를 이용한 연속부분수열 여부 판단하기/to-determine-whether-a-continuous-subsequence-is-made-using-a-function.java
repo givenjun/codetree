@@ -13,7 +13,7 @@ public class Main {
         // Please write your code here.
         int cnt = 0;
         boolean seq = false;
-        for (int i = 0; i < n1 - n2; i++) {
+        for (int i = 0; i < n1 - n2 + 1; i++) {
             for (int j = 0; j < n2; j++) {
                 if (check(a[i+j], b[j])) {
                     // System.out.println(a[i+j] + " " + b[j]);
