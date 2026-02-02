@@ -31,26 +31,25 @@ public class Main {
         int[] heights = new int[n];
         double[] weights = new double[n];
         Person[] person = new Person[n];
-        Person[] p = new Person[n];
         for (int i = 0; i < n; i++) {
             names[i] = sc.next();
             heights[i] = sc.nextInt();
             weights[i] = sc.nextDouble();
             person[i] = new Person(names[i], heights[i], weights[i], false);
-            p[i] = new Person(names[i], heights[i], weights[i], true);
         }
         // Please write your code here.
         Arrays.sort(person);
         System.out.println("name");
-        for(Person personE : person) {
-            personE.print();
+        for(Person p : person) {
+            p.print();
+            p.nameSort = true;
         }
 
         System.out.println();
-        Arrays.sort(p);
+        Arrays.sort(person);
         System.out.println("height");
-        for(Person pE : p) {
-            pE.print();
+        for(Person p : person) {
+            p.print();
         }
     }
 }
