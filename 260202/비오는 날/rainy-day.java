@@ -33,7 +33,8 @@ public class Main {
         Arrays.sort(rainDates);
         for (int i = 0; i < n; i++) {
             String date = info[i].date;
-            if (rainDates[0].equals(date)) {
+            String weather = info[i].weather;
+            if (date.equals(rainDates[0]) && weather.equals("Rain")) {
                 info[i].print();
                 break;
             }
