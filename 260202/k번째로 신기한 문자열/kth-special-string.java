@@ -21,6 +21,7 @@ public class Main {
         int idx = 0;
 
         for (int i = 0; i < n; i++) {
+            if (sList[i].length() < tLen) continue;
             if ((sList[i].substring(0, tLen)).equals(t)) {
                 cnt++;
                 if (cnt == k) {
