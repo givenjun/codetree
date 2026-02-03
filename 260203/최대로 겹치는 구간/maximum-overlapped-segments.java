@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -14,7 +14,7 @@ public class Main {
             int e = Integer.parseInt(se[1]);
 
             for (int j = s; j < e; j++) {
-                list[j]++;
+                list[j + 100]++;
             }
         }
         Arrays.sort(list);
