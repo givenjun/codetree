@@ -26,7 +26,7 @@ public class Main {
         total2 += d2;
 
         int dif = total2 - total1 - Arrays.asList(day).indexOf(A);
-        if (!A.eqauls("Mon") && dif / 7 == 0) System.out.println(0);
+        if (!(A.equals("Mon")) && dif / 7 == 0) System.out.println(0);
         else System.out.println(dif / 7 + 1);
     }
 }
