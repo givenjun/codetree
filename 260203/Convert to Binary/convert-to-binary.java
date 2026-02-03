@@ -4,7 +4,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         // Please write your code here.
-        binary(n);
+        if (n != 0) binary(n);
+        else System.out.print(0);
     }
     public static void binary(int n) {
         if (n == 0) return;
