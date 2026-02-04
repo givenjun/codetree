@@ -24,10 +24,12 @@ public class Main {
         int area = 0;
         int[] start = new int[]{2001, 2001};
         int[] end = new int[]{-1, -1};
+        boolean firstRect = false;
 
         for (int i = 0; i < 2001; i++) {
             for (int j = 0; j < 2001; j++) {
                 if (rect[i][j] == true) {
+                    firstRect = true;
                     if (i < start[0]) start[0] = i;
                     if (j < start[1]) start[1] = j;
                     if (i > end[0]) end[0] = i;
@@ -52,7 +54,10 @@ public class Main {
         //     // System.out.println();
         // }
 
-        System.out.println((end[0] - start[0] + 1) * (end[1] - start[1] + 1));
+        if (firstRect)
+            System.out.println((end[0] - start[0] + 1) * (end[1] - start[1] + 1));
+        else 
+            System.out.print(0);
 
         // System.out.print(area);
     }
