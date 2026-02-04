@@ -12,6 +12,9 @@ public class Main {
         int max = -1;
 
         for (int i = 0; i < n; i++) {
+            if (idx > max) max = idx;
+            if (idx < min) min = idx;
+
             String[] xSide = br.readLine().split(" ");
             int x = Integer.parseInt(xSide[0]);
             String side = xSide[1];
@@ -36,10 +39,10 @@ public class Main {
                 }
                 // System.out.println(idx - x + 1);
                 idx -= (x - 1);
-            }
+            }   
+
             if (idx > max) max = idx;
             if (idx < min) min = idx;
-            
         }
         // System.out.println("\n" + min + "~" + max + "\n");
         int black = 0;
@@ -58,7 +61,6 @@ public class Main {
                     black++;
                 }
             }
-            
             
             // System.out.println(grayChk[i][0] + " " + grayChk[i][1] + " -> " +  colorChk[i][0] + " " + colorChk[i][1]);
         }
