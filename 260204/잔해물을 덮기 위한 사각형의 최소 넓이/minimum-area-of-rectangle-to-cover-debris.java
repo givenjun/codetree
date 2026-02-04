@@ -39,21 +39,21 @@ public class Main {
         // System.out.println(start[0] + " " + start[1]);
         // System.out.println(end[0] + " " + end[1]);
 
-        for (int i = start[0]; i <= end[0]; i++) {
-            for (int j = start[1]; j <= end[1]; j++) {
-                // if (rect[i][j] == true) {
-                //     System.out.print("O");
-                // }
-                // else {
-                //     System.out.print("X");
-                // }
-                area++;
-            }
-            // System.out.println();
-        }
+        // for (int i = start[0]; i <= end[0]; i++) {
+        //     for (int j = start[1]; j <= end[1]; j++) {
+        //         // if (rect[i][j] == true) {
+        //         //     System.out.print("O");
+        //         // }
+        //         // else {
+        //         //     System.out.print("X");
+        //         // }
+        //         area++;
+        //     }
+        //     // System.out.println();
+        // }
 
-        // System.out.println((end[0] - start[0] + 1) * (end[1] - start[1] + 1));
+        System.out.println((end[0] - start[0] + 1) * (end[1] - start[1] + 1));
 
-        System.out.print(area);
+        // System.out.print(area);
     }
 }
