@@ -30,15 +30,29 @@ public class Main {
                 if (rect[i][j] == true) {
                     if (i < start[0]) start[0] = i;
                     if (j < start[1]) start[1] = j;
-                    if (i > end[0]) end[0] = i + 1;
-                    if (j > end[1]) end[1] = j + 1;
+                    if (i > end[0]) end[0] = i;
+                    if (j > end[1]) end[1] = j;
                 }
             }
         }
+
         // System.out.println(start[0] + " " + start[1]);
         // System.out.println(end[0] + " " + end[1]);
 
-        area = (end[0] - start[0]) * (end[1] - start[1]);
+        for (int i = start[0]; i <= end[0]; i++) {
+            for (int j = start[1]; j <= end[1]; j++) {
+                // if (rect[i][j] == true) {
+                //     System.out.print("O");
+                // }
+                // else {
+                //     System.out.print("X");
+                // }
+                area++;
+            }
+            // System.out.println();
+        }
+
+        // System.out.println((end[0] - start[0] + 1) * (end[1] - start[1] + 1));
 
         System.out.print(area);
     }
