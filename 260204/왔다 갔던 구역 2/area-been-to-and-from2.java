@@ -13,18 +13,20 @@ public class Main {
             int x = Integer.parseInt(xSide[0]);
             String side = xSide[1];
 
+            // System.out.print(idx - 1000 + " ");
             if (side.equals("L")) {
-                for (int j = idx - 1; j >= idx - x; j--) {
+                for (int j = idx - x; j < idx; j++) {
                     list[j]++;
                 }
                 idx -= x;
             }
             else {
-                for (int j = idx + 1; j <= idx + x; j++) {
+                for (int j = idx; j < idx + x; j++) {
                     list[j]++;
                 }
                 idx += x;
             }
+            // System.out.println(idx - 1000);
         }
         int regionSize = 0;
         for (int l : list) {
