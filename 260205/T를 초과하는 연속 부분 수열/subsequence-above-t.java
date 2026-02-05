@@ -10,18 +10,25 @@ public class Main {
         for (int i = 0; i < n; i++)
             arr[i] = sc.nextInt();
         // Please write your code here.
-        int max = 0, pos = 0; 
+        int cnt = 1, max = 0, pos = 0; 
+        int condition = 0;
 
-        chk[pos] = (arr[0] > t) ? 1 : 0;
-        for (int i = 1; i < n; i++) {
-            if ((arr[i - 1] >= arr[i]) || arr[i] <= t) {
-                pos++;
+        for (int i = 0; i < n - 1; i++) {
+            if (arr[i] > t) condition++;
+
+            if (condition > 0) {
+                if (arr[i] < arr[i + 1]) {
+                    cnt++;
+                }
+                else {
+                    cnt = 1;
+                }
             }
-            else {
-                chk[pos]++;
-            }
-            max = (chk[pos] > max) ? chk[pos] : max;
+            max = (cnt > max) ? cnt : max;
         }
-        System.out.print(max);
+        if (condition > 0)
+            System.out.print(max);
+        else 
+            System.out.print(0);
     }
 }
