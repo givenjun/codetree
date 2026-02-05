@@ -25,6 +25,7 @@ public class Main {
                 chk[0][t1] = val1;
             } 
         }
+
         for (int i = 0; i < m; i++) {
             String direction = sc.next();
             int time = sc.nextInt();
@@ -41,6 +42,13 @@ public class Main {
             } 
         }
 
+        for (int i = t1 + 1; i < size; i++) {
+            chk[0][i] = chk[0][i - 1];
+        }
+        for (int i = t2 + 1; i < size; i++) {
+            chk[1][i] = chk[1][i - 1];
+        }
+
         int res = -1;
         for (int i = 1; i < size; i++) {
             // System.out.println(chk[0][i] + " " + chk[1][i]);
@@ -50,6 +58,5 @@ public class Main {
             }
         }
         System.out.print(res);
-
     }
 }
