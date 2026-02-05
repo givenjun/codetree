@@ -7,7 +7,7 @@ public class Main {
         String[] nm = br.readLine().split(" ");
         int n = Integer.parseInt(nm[0]);
         int m = Integer.parseInt(nm[1]);
-        int[][] arr = new int[2][1000001];
+        int[][] arr = new int[2][2000001];
 
         int time1 = 1, time2 = 1;
         for (int i = 0; i < n; i++) {
