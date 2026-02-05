@@ -14,6 +14,7 @@ public class Main {
             person[penalizedPerson[i]]++;
             if (person[penalizedPerson[i]] == k) {
                 res = penalizedPerson[i];
+                break;
             }
         }
         System.out.print(res);
