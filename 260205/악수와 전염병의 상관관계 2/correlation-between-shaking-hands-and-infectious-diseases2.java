@@ -13,6 +13,7 @@ public class Main {
         int T = Integer.parseInt(NKPT[3]);
         int[][] time = new int[251][2];
         int[][] person = new int[N + 1][2];
+        person[P][0] = 1;
 
         int timeMax = 0;
         int timeMin = 251;
@@ -27,10 +28,9 @@ public class Main {
             timeMax = (t > timeMax) ? t : timeMax;
             timeMin = (t < timeMin) ? t : timeMin;
         }
-        person[P][0] = 1;
-
+    
         for (int i = timeMin; i <= timeMax; i++) {
-            // System.out.print(i + " : " + time[i][0] + " -> " + time[i][1] + " | ");
+            // System.out.print(i + " : " + time[i][0] + " <-> " + time[i][1] + " | ");
 
             int[] personA = person[time[i][0]];
             int[] personB = person[time[i][1]];
@@ -40,13 +40,13 @@ public class Main {
                 if (personB[0] == 1) personB[1]++;
             }
 
-            if ((personA[0] == 1 && personA[1] <= K) || (personA[0] == 1 && personA[1] <= K)) {
+            if ((personA[0] == 1 && personA[1] <= K) || (personB[0] == 1 && personB[1] <= K)) {
                 personA[0] = 1;
                 personB[0] = 1;
             }
 
             // for (int j = 1; j < N + 1; j++) {
-            //     System.out.print(" 감염 " + person[j][0] + ", 악수" + person[j][1] + "  ");
+            //     System.out.print("감염 " + person[j][0] + ", 악수" + person[j][1] + "  ");
             // }
             // System.out.println();
         }
