@@ -6,27 +6,24 @@ public class Main {
         int n = sc.nextInt();
         int t = sc.nextInt();
         int[] arr = new int[n];
-        int[] chk = new int[n];
-        for (int i = 0; i < n; i++)
+        boolean cond = false;
+        for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
+            if (arr[i] > t) cond = true;
+        }
         // Please write your code here.
-        int cnt = 1, max = 0, pos = 0; 
-        int condition = 0;
 
-        for (int i = 0; i < n - 1; i++) {
-            if (arr[i] > t) condition++;
-
-            if (condition > 0) {
-                if (arr[i] < arr[i + 1]) {
-                    cnt++;
-                }
-                else {
-                    cnt = 1;
-                }
+        int cnt = 1, max = 1; 
+        for (int i = 1; i < n; i++) {
+            if (arr[i - 1] > t && arr[i] > t) {
+                cnt++;
+            }
+            else {
+                cnt = 1;
             }
             max = (cnt > max) ? cnt : max;
-        }
-        if (condition > 0)
+        } 
+        if (cond)
             System.out.print(max);
         else 
             System.out.print(0);
