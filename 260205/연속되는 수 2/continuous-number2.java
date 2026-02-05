@@ -11,11 +11,11 @@ public class Main {
         // Please write your code here.
         int a = 0, b = 0, cnt = 1, max = 1;
         for (int i = 1; i < n; i++) {
-            if (cnt > max) max = cnt;
             a = arr[i - 1];
             b = arr[i];
             if (a == b) cnt++;
             else cnt = 1;
+            if (cnt > max) max = cnt;
         }
 
         System.out.print(max);
