@@ -25,7 +25,7 @@ public class Main {
         int[][] matrix = new int[n][n];
 
         int[] dx = new int[]{0, 1, -1, 0}; // 1 -> 2, 2 -> 1
-        int[] dy = new int[]{1, 0, 0, -1}; // 0 -> 3, 3 -> 0;
+        int[] dy = new int[]{-1, 0, 0, 1}; // 0 -> 3, 3 -> 0;
         
         // System.out.println("0초 : " + (r) + " " + (c));
         for (int i = 0; i < t; i++) {
