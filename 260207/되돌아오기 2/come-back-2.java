@@ -20,7 +20,7 @@ public class Main {
                 direction = (direction + 3) % 4;
                 time++;
             }
-            if (c == 'R') {
+            else if (c == 'R') {
                 direction = (direction + 1) % 4;
                 time++;
             }
@@ -28,7 +28,7 @@ public class Main {
                 x += dx[direction];
                 y += dy[direction];
                 time++;
-                // System.out.println(x +" "+y);
+                // System.out.println(i + " "+x +" "+y);
                 if (x == 0 && y == 0) {
                     ans = time;
                     break;
