@@ -7,6 +7,7 @@ public class Main {
     } 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         String[] nm = br.readLine().split(" ");
         n = Integer.parseInt(nm[0]);
@@ -15,13 +16,34 @@ public class Main {
         char alpha = 'A';
         matrix[0][0] = alpha;
 
-        int cnt = 0;
-        while (cnt == n * m) {
+        int x = 0, y = 0, d = 0;
+        int[] dx = new int[]{1, 0, -1, 0};
+        int[] dy = new int[]{0, 1, 0, -1};
+
+        int cnt = 1;
+        while (cnt != n * m) {
             cnt++;
-            aplha++;
+            alpha++;
+            if (alpha == ('Z' + 1)) {
+                alpha = 'A';
+            }
+            int nextY = y + dy[d];
+            int nextX = x + dx[d];
+            if (!inRange(nextY, nextX) || matrix[nextY][nextX] != '\0') {
+                d = (d + 1) % 4;
+            }
+            x += dx[d];
+            y += dy[d];
+            matrix[y][x] = alpha;
         }
         
-
-
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                bw.write(matrix[i][j] + " ");
+            }
+            bw.newLine();
+        }
+        bw.flush();
+        bw.close();
     }
 }
