@@ -38,8 +38,10 @@ public class Main {
                     int midX = j;
                     for (int y = midY + 1; y < r - 1; y++) {
                         for (int x = midX + 1; x < c - 1; x++) {
-                            // System.out.println(y + " " + x);
-                            cnt++;
+                            if (plate[y][x] != end && plate[y][x] == start) {
+                                // System.out.println(y + " " + x);
+                                cnt++;
+                            }
                         }
                     }
                 }
