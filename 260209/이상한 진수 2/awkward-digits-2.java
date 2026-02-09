@@ -1,36 +1,30 @@
 import java.io.*;
 
 public class Main {
-    public static String binary = "";
-    public static String toBinary(int n) {
-        if (n == 0) return binary;
-
-        return toBinary(n / 2) + (n % 2);
+    public static int toDecimal(char[] a) {
+        int len = a.length;
+        int num = 0;
+        int mul = 1;
+        for (int i = len - 1; i >= 0; i--) {
+            num += (a[i] - '0') * mul;
+            mul *= 2;
+        }
+        return num;
     }
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String a = br.readLine();
+        char[] apart = a.toCharArray();
+        int len = a.length();
+        int max = Integer.MIN_VALUE;
 
-        int max = 0;
-        int num = 0;
-        for (int i = 0; i < 1024; i++) {
-            String str = toBinary(i);
-            int len = (str.length());
-
-            for (int j = 0; j < len; j++) {
-                char c = (str.charAt(j) == '1') ? '0' : '1';
-                char[] apart = str.toCharArray();
-                apart[j] = c;
-                String sub = new String(apart);
-                if (sub.equals(a)) {
-                    // System.out.println(str + " " + a + " <-> " + sub);
-                    // System.out.println(i);
-                    num = i;
-                    if (num > max) max = num;
-                }
-            }
+        for (int j = 0; j < len; j++) {
+            apart[j] = (apart[j] == '1') ? '0' : '1';
+            int num = toDecimal(apart);    
+            if (num > max) max = num;
+            apart[j] = (apart[j] == '1') ? '0' : '1';
         }
 
         System.out.print(max);
