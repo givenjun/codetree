@@ -13,7 +13,7 @@ public class Main {
 
         String a = br.readLine();
 
-        int max = Integer.MIN_VALUE;
+        int max = 0;
         int num = 0;
         for (int i = 0; i < 1024; i++) {
             String str = toBinary(i);
