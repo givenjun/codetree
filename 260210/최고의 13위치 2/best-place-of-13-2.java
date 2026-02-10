@@ -15,28 +15,27 @@ public class Main {
             }
         }
       
+        int ans = 0;
         for (int i = 0; i < n; i++) {
-            int max = Integer.MIN_VALUE;
             for (int j = 0; j < n - 2; j++) {
-                int cnt = 0;
-                for (int k = 0; k < 3; k++) {
-                    if (matrix[i][j + k] == 1) cnt++;
+                int grid1 = matrix[i][j] + matrix[i][j + 1] + matrix[i][j + 2];
+                for (int y = 0; y < n; y++) {
+                    for (int x = 0; x < n - 2; x++) {
+                        if (i == y && (j == x) || (j == x - 1) || (j == x - 2) || (j == x + 1) || (j == x + 2)) continue;
+
+                        int grid2 = matrix[y][x] + matrix[y][x + 1] + matrix[y][x + 2];
+                        
+                        
+                        if ((grid1 + grid2) > ans) {
+                            ans = (grid1 + grid2);
+                            // System.out.println(i + ", " + j + " ~ " + (j + 2) + " | " + y + ", " + x + " ~ " + (x + 2) + " = " + ans);
+                        }
+                    }
                 }
-                max = (cnt > max) ? cnt : max;
+
             }
-            maxList[i] = max;
         }
 
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < n - 1; j++) {
-                if (maxList[j] > maxList[j + 1]) {
-                    int tmp = maxList[j];
-                    maxList[j] = maxList[j + 1];
-                    maxList[j + 1] = tmp; 
-                }
-            }
-        }
-        
-        System.out.print(maxList[n - 1] + maxList[n - 2]);
+        System.out.print(ans);
     }
 }
