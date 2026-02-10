@@ -140,6 +140,7 @@ public class Main {
         }
 
         System.out.println(winner);
-        System.out.println((midY + 1) + " " + (midX + 1));
+        if (winner != 0)
+            System.out.println((midY + 1) + " " + (midX + 1));
     }
 }
