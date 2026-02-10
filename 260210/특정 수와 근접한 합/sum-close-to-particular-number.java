@@ -19,7 +19,8 @@ public class Main {
 
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < n; i++) {
-            for (int j = i; j < n; j++) {
+            for (int j = 0; j < n; j++) {
+                if (i == j) continue;
                 int chkSum = sum;
                 chkSum -= arr[i];
                 chkSum -= arr[j];
