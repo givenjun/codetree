@@ -9,21 +9,16 @@ public class Main {
         int k = Integer.parseInt(nk[1]);
         char[] pos = new char[10001];
 
-        int start = 10000;
-        int end = 0;
         for (int i = 0; i < n; i++) {
             String[] xs = br.readLine().split(" ");
             int x = Integer.parseInt(xs[0]);
             char s = xs[1].charAt(0);
 
             pos[x] = s; 
-
-            start = (x < start) ? x : start;
-            end = (x > end) ? x : end;
         }
 
         int max = 0;
-        for (int i = start; i <= end; i++) {
+        for (int i = 1; i <= 10000 - k; i++) {
             int score = 0;
             for (int j = i; j <= i + k; j++) {
                 if (pos[j] == 'G') score += 1;
