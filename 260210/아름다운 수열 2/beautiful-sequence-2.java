@@ -32,7 +32,8 @@ public class Main {
                 chk[a[j]]--;
             }
 
-            for (int j = 0; j < n; j++) {
+            for (int j = 1; j < 101; j++) {
+
                 if (chk[j] != 0) {
                     exist = false; 
                     break;
