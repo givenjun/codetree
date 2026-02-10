@@ -22,14 +22,14 @@ public class Main {
 
         int cnt = 0;
         for (int i = 0; i <= n - m; i++) {
-            int[] chk = new int[n];
+            int[] chk = new int[101];
             boolean exist = true;
             for (int j = 0; j < m; j++) {
-                chk[b[j] - 1]++;
+                chk[b[j]]++;
             }
 
             for (int j = i; j < i + m; j++) {
-                chk[a[j] - 1]--;
+                chk[a[j]]--;
             }
 
             for (int j = 0; j < n; j++) {
