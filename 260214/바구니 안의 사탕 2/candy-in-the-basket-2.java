@@ -19,14 +19,22 @@ public class Main {
         }
 
         int max = 0;
-        for (int i = k + 1; i < 101 - k - 1; i++) {
-            int cnt = 0;
-            for (int j = i - k; j < i + k + 1; j++) {
-                cnt += basket[j];
-                // System.out.print(j + " ");
+
+        if (k < 50) {
+            for (int i = k + 1; i < 101 - k - 1; i++) {
+                int cnt = 0;
+                for (int j = i - k; j < i + k + 1; j++) {
+                    cnt += basket[j];
+                    // System.out.print(j + " ");
+                }
+                max = Math.max(cnt, max);
+                // System.out.println(i);
             }
-            max = Math.max(cnt, max);
-            // System.out.println(i);
+        }
+        else {
+            for (int i = 0; i < 101; i++) {
+                max += basket[i];
+            }
         }
 
         System.out.print(max);
