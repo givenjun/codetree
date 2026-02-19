@@ -35,6 +35,7 @@ public class Main {
                 }
             }
         }
-        System.out.print(minDif);
+        if (minDif == Integer.MAX_VALUE) System.out.print(-1);
+        else System.out.print(minDif);
     }
 }
