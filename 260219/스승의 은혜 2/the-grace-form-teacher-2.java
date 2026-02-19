@@ -24,7 +24,7 @@ public class Main {
                 if (i == j) sum += students[j] / 2;
                 else sum += students[j];
 
-                if (sum >= b) {
+                if (sum > b) {
                     break;
                 }
 
