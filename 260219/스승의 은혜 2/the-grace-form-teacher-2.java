@@ -15,6 +15,8 @@ public class Main {
             students[i] = Integer.parseInt(br.readLine());
         }
 
+        Arrays.sort(students);
+
         int maxCnt = 0;
         for (int i = 0; i < n; i++) {
             int sum = 0;
